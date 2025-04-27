@@ -1,0 +1,17 @@
+inteiro n = 0;
+escreva("Digite o número de linhas: ");
+leia(n);
+
+se n <= 0 entao {
+    escreva("Erro: número deve ser maior que zero!");
+} senao {
+    inteiro linha = 1;
+    enquanto linha <= n faca {
+        inteiro coluna = 1;
+        enquanto coluna <= linha faca {
+            // Aqui virá a lógica do triângulo
+            coluna = coluna + 1;
+        }
+        linha = linha + 1;
+    }
+}

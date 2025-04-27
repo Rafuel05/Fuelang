@@ -1,0 +1,12 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Batch files always use CRLF
+*.bat text eol=crlf
+
+# Source files always use LF
+*.java text eol=lf
+*.g4 text eol=lf
+*.fuel text eol=lf
+*.dot text eol=lf
+*.interp text eol=lf
