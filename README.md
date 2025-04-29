@@ -76,7 +76,35 @@ se n <= 0 entao {
     }
 }
 ```
+### Exemplo 2: Classificação de triangulos
+```
+inteiro a = 0;
+inteiro b = 0;
+inteiro c = 0;
 
+escreva("Digite os três lados do triângulo:");
+leia(a);
+leia(b);
+leia(c);
+
+se (a <= 0) || (b <= 0) || (c <= 0) entao {
+    escreva("Erro: os lados devem ser positivos!");
+} senao {
+    se (a + b <= c) || (b + c <= a) || (a + c <= b) entao {
+        escreva("Não forma um triângulo!");
+    } senao {
+        se (a == b) && (b == c) entao {
+            escreva("Triângulo Equilátero");
+        } senao {
+            se (a == b) || (b == c) || (a == c) entao {
+                escreva("Triângulo Isósceles");
+            } senao {
+                escreva("Triângulo Escaleno");
+            }
+        }
+    }
+}
+```
 ## Como Usar
 
 ### Requisitos
