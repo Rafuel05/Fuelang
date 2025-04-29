@@ -19,41 +19,70 @@ public class FuelangTokenizer {
             FuelangLexer lexer = new FuelangLexer(input);
             CommonTokenStream tokens = new CommonTokenStream(lexer);
             
-            // Criar o parser
+            // Criar o parser e configurar tratamento de erros
             FuelangParser parser = new FuelangParser(tokens);
-            ParserRuleContext tree = parser.programa();
+            parser.removeErrorListeners(); // Remove o listener padrão
+            parser.addErrorListener(new BaseErrorListener() {
+                @Override
+                public void syntaxError(Recognizer<?, ?> recognizer,
+                                      Object offendingSymbol,
+                                      int line,
+                                      int charPositionInLine,
+                                      String msg,
+                                      RecognitionException e) {
+                    Token offendingToken = (Token) offendingSymbol;
+                    String expected = msg.contains("expecting") 
+                        ? msg.substring(msg.indexOf("expecting") + 10)
+                        : "outro token";
+                    
+                    throw new SyntaxError(line, 
+                                        charPositionInLine, 
+                                        expected, 
+                                        offendingToken.getText());
+                }
+            });
 
-            // Mostrar tokens se não for modo DOT
-            if (args.length == 1 || !args[1].equals("-dot")) {
-                System.out.println("=== Árvore Sintática ===");
-                System.out.println(tree.toStringTree(parser));
-                
-                System.out.println("\n=== Tokens ===");
-                tokens.fill();
-                for (Token token : tokens.getTokens()) {
-                    if (token.getType() != Token.EOF) {
-                        System.out.printf("<%s, %s, %d, %d>\n",
-                            lexer.getVocabulary().getSymbolicName(token.getType()),
-                            token.getText().replace("\n", "\\n"),
-                            token.getLine(),
-                            token.getCharPositionInLine()
-                        );
+            try {
+                // Tentar fazer o parse
+                ParserRuleContext tree = parser.programa();
+
+                // Mostrar tokens se não for modo DOT
+                if (args.length == 1 || !args[1].equals("-dot")) {
+                    System.out.println("=== Árvore Sintática ===");
+                    System.out.println(tree.toStringTree(parser));
+                    
+                    System.out.println("\n=== Tokens ===");
+                    tokens.fill();
+                    for (Token token : tokens.getTokens()) {
+                        if (token.getType() != Token.EOF) {
+                            System.out.printf("<%s, %s, %d, %d>\n",
+                                lexer.getVocabulary().getSymbolicName(token.getType()),
+                                token.getText().replace("\n", "\\n"),
+                                token.getLine(),
+                                token.getCharPositionInLine()
+                            );
+                        }
                     }
                 }
-            }
-            
-            // Gerar arquivo DOT se solicitado
-            if (args.length > 1 && args[1].equals("-dot")) {
-                DotGenerator dot = new DotGenerator();
-                generateDOT(tree, parser, dot);
-                dot.generateDotFile("ast.dot");
-                System.out.println("Arquivo AST gerado: ast.dot");
+                
+                // Gerar arquivo DOT se solicitado
+                if (args.length > 1 && args[1].equals("-dot")) {
+                    DotGenerator dot = new DotGenerator();
+                    generateDOT(tree, parser, dot);
+                    dot.generateDotFile("ast.dot");
+                    System.out.println("Arquivo AST gerado: ast.dot");
+                }
+            } catch (SyntaxError e) {
+                System.err.println(e.getMessage());
+                System.exit(1);
             }
             
         } catch (IOException e) {
             System.err.println("Erro ao ler arquivo: " + e.getMessage());
+            System.exit(1);
         } catch (LexicalError e) {
             System.err.println(e.getMessage());
+            System.exit(1);
         }
     }
 

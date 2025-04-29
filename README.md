@@ -151,5 +151,5 @@ javac -cp "lib\antlr-4.13.1-complete.jar" grammar\*.java
 ## Autores
 
 - Rafael Melchior de Oliveira
-- Arthur Octavio de Oliveira Confessor
+- Arthur Octavio Oliveira Confessor
 

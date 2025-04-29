@@ -103,6 +103,21 @@ public class FuelangParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
+
+	    @Override
+	    public void notifyErrorListeners(Token offendingToken, String msg, RecognitionException e) {
+	        int line = offendingToken.getLine();
+	        int column = offendingToken.getCharPositionInLine();
+	        String tokenText = offendingToken.getText();
+	        
+	        // Extrair o token esperado da mensagem de erro
+	        String expected = msg.contains("expecting") 
+	            ? msg.substring(msg.indexOf("expecting") + 10)
+	            : "outro token";
+	            
+	        throw new SyntaxError(line, column, expected, tokenText);
+	    }
+
 	public FuelangParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
