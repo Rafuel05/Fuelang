@@ -1,17 +1,18 @@
-inteiro n = 0;
-escreva("Digite o número de linhas: ");
-leia(n);
+integer n = 0;
+put("Digite o número de linhas: ");
+get(n);
 
-se n <= 0 entao {
-    escreva("Erro: número deve ser maior que zero!");
-} senao {
-    inteiro linha = 1;
-    enquanto linha <= n faca {
-        inteiro coluna = 1;
-        enquanto coluna <= linha faca {
-            // Aqui virá a lógica do triângulo
+if n <= 0 then {
+    put("Erro: número deve ser maior que zero!");
+} else {
+    integer linha = 1;
+    while linha <= n do {
+        integer coluna = 1;
+        while coluna <= linha do {
+            put("*");
             coluna = coluna + 1;
         }
+        put("\n");
         linha = linha + 1;
     }
 }

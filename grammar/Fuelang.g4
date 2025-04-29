@@ -16,7 +16,6 @@ options {
         int column = offendingToken.getCharPositionInLine();
         String tokenText = offendingToken.getText();
         
-        // Extrair o token esperado da mensagem de erro
         String expected = msg.contains("expecting") 
             ? msg.substring(msg.indexOf("expecting") + 10)
             : "outro token";
@@ -25,136 +24,137 @@ options {
     }
 }
 
+// Program structure
+program: declarations EOF;
 
-// Programa é uma sequência de declarações
-programa: declaracoes EOF;
+// Declarations
+declarations: declaration*;
 
-// Declarações
-declaracoes: declaracao*;
-
-declaracao
-    : declaracaoVariavel
-    | comando
+declaration
+    : variableDeclaration
+    | command
     ;
 
-// Tipos e variáveis
-declaracaoVariavel: TIPO ID IGUAL expressao PONTO_VIRGULA;
-TIPO: 'inteiro' | 'texto';
+// Types and variables
+variableDeclaration: TYPE ID ASSIGN expression SEMICOLON;
+TYPE: 'integer' | 'text';
 
-// Comandos
-comando
-    : comandoEntrada
-    | comandoSaida
-    | comandoIf
-    | comandoWhile
-    | atribuicao
+// Commands
+command
+    : inputCommand
+    | outputCommand
+    | ifCommand
+    | whileCommand
+    | assignment
     ;
 
-comandoEntrada: LEIA ABRE_PAR ID FECHA_PAR PONTO_VIRGULA;
-comandoSaida: ESCREVA ABRE_PAR expressao FECHA_PAR PONTO_VIRGULA;
-atribuicao: ID IGUAL expressao PONTO_VIRGULA;
+inputCommand: GET LPAREN ID RPAREN SEMICOLON;
+outputCommand: PUT LPAREN expression RPAREN SEMICOLON;
+assignment: ID ASSIGN expression SEMICOLON;
 
-// Estruturas de controle
-comandoIf
-    : SE expressaoLogica ENTAO bloco
-      (SENAO bloco)?
+// Control structures
+ifCommand
+    : IF expression THEN block
+      (ELSE block)?
     ;
 
-comandoWhile
-    : ENQUANTO expressaoLogica FACA bloco
+whileCommand
+    : WHILE expression DO block
     ;
 
-bloco: ABRE_CHAVE declaracoes FECHA_CHAVE;
+block: LBRACE declarations RBRACE;
 
-// Expressões
-expressao
-    : expressaoLogica
-    | expressaoAritmetica
+// Expressions
+expression
+    : logicalExpression
+    | arithmeticExpression
     | STRING
     ;
 
-expressaoAritmetica
-    : termo (operadorAritmetico termo)*
+arithmeticExpression
+    : term (arithmeticOperator term)*
     ;
 
-termo
-    : fator (operadorTermo fator)*
+term
+    : factor (termOperator factor)*
     ;
 
-operadorAritmetico: MAIS | MENOS;
-operadorTermo: MULT | DIV;
+arithmeticOperator: PLUS | MINUS;
+termOperator: MULT | DIV;
 
-fator
-    : ABRE_PAR expressaoAritmetica FECHA_PAR
-    | NUMERO
+factor
+    : LPAREN arithmeticExpression RPAREN
+    | NUMBER
     | ID
     ;
 
-expressaoLogica
-    : termoLogico (OP_OU termoLogico)*
+logicalExpression
+    : logicalTerm (OR logicalTerm)*
     ;
 
-termoLogico
-    : fatorLogico (OP_E fatorLogico)*
+logicalTerm
+    : logicalFactor (AND logicalFactor)*
     ;
 
-fatorLogico
-    : OP_NAO fatorLogico
-    | ABRE_PAR expressaoLogica FECHA_PAR
-    | comparacao
+logicalFactor
+    : NOT logicalFactor
+    | LPAREN logicalExpression RPAREN
+    | comparison
     ;
 
-comparacao
-    : expressaoAritmetica operadorComp expressaoAritmetica
+comparison
+    : arithmeticExpression comparisonOperator arithmeticExpression
     ;
 
-operadorComp
-    : OP_IGUAL
-    | OP_DIF
-    | OP_MENOR_IGUAL
-    | OP_MAIOR_IGUAL
-    | OP_MENOR
-    | OP_MAIOR
+comparisonOperator
+    : EQUALS
+    | NOT_EQUALS
+    | LESS_EQUALS
+    | GREATER_EQUALS
+    | LESS
+    | GREATER
     ;
 
-// Tokens
-SE: 'se';
-ENTAO: 'entao';
-SENAO: 'senao';
-ENQUANTO: 'enquanto';
-FACA: 'faca';
-LEIA: 'leia';
-ESCREVA: 'escreva';
+// Keywords
+IF: 'if';
+THEN: 'then';
+ELSE: 'else';
+WHILE: 'while';
+DO: 'do';
+GET: 'get';
+PUT: 'put';
 
-IGUAL: '=';
-MAIS: '+';
-MENOS: '-';
+// Operators
+EQUALS: '==';
+NOT_EQUALS: '!=';
+LESS: '<';
+GREATER: '>';
+LESS_EQUALS: '<=';
+GREATER_EQUALS: '>=';
+PLUS: '+';
+MINUS: '-';
 MULT: '*';
 DIV: '/';
-OP_E: '&&';
-OP_OU: '||';
-OP_NAO: '!';
-OP_IGUAL: '==';
-OP_DIF: '!=';
-OP_MENOR: '<';
-OP_MAIOR: '>';
-OP_MENOR_IGUAL: '<=';
-OP_MAIOR_IGUAL: '>=';
+AND: '&&';
+OR: '||';
+NOT: '!';
+ASSIGN: '=';
 
-ABRE_PAR: '(';
-FECHA_PAR: ')';
-ABRE_CHAVE: '{';
-FECHA_CHAVE: '}';
-PONTO_VIRGULA: ';';
+// Delimiters
+LPAREN: '(';
+RPAREN: ')';
+LBRACE: '{';
+RBRACE: '}';
+SEMICOLON: ';';
 
+// Literals
 ID: [a-zA-Z][a-zA-Z0-9_]*;
-NUMERO: [0-9]+('.'[0-9]+)?;
+NUMBER: [0-9]+('.'[0-9]+)?;
 STRING: '"' (~["\r\n])* '"';
 
-// Ignorar espaços em branco e comentários
+// Skip whitespace and comments
 WS: [ \t\r\n]+ -> skip;
-COMENTARIO: '//' ~[\r\n]* -> skip;
+COMMENT: '//' ~[\r\n]* -> skip;
 
-// Tratamento de erros léxicos
+// Lexical error handling
 ErrorChar: . {reportLexicalError();};
-

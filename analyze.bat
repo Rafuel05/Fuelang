@@ -38,13 +38,13 @@ if %modo%==all (
     echo === Tokens e AST ===
     java -cp "lib\antlr-4.13.1-complete.jar;." grammar.FuelangTokenizer %1
     echo === Visualizador ===
-    start javaw -cp "lib\antlr-4.13.1-complete.jar;." org.antlr.v4.gui.TestRig grammar.Fuelang programa -gui %1
+    start javaw -cp "lib\antlr-4.13.1-complete.jar;." org.antlr.v4.gui.TestRig grammar.Fuelang program -gui %1
     echo === Gerando DOT ===
     java -cp "lib\antlr-4.13.1-complete.jar;." grammar.FuelangTokenizer %1 -dot
 ) else if %modo%==-t (
     java -cp "lib\antlr-4.13.1-complete.jar;." grammar.FuelangTokenizer %1
 ) else if %modo%==-g (
-    start javaw -cp "lib\antlr-4.13.1-complete.jar;." org.antlr.v4.gui.TestRig grammar.Fuelang programa -gui %1
+    start javaw -cp "lib\antlr-4.13.1-complete.jar;." org.antlr.v4.gui.TestRig grammar.Fuelang program -gui %1
 ) else if %modo%==-d (
     java -cp "lib\antlr-4.13.1-complete.jar;." grammar.FuelangTokenizer %1 -dot
 )

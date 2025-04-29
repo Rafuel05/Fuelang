@@ -44,7 +44,7 @@ public class FuelangTokenizer {
 
             try {
                 // Tentar fazer o parse
-                ParserRuleContext tree = parser.programa();
+                ParserRuleContext tree = parser.program();
 
                 // Mostrar tokens se não for modo DOT
                 if (args.length == 1 || !args[1].equals("-dot")) {

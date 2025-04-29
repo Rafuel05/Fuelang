@@ -5,8 +5,8 @@ Fuelang é uma linguagem de programação simples e intuitiva desenvolvida para 
 ## Características
 
 ### Tipos de Dados
-- `inteiro`: Números inteiros e decimais
-- `texto`: Strings delimitadas por aspas duplas
+- `integer`: Números inteiros e decimais
+- `text`: Strings delimitadas por aspas duplas
 
 ### Operadores
 
@@ -31,75 +31,77 @@ Fuelang é uma linguagem de programação simples e intuitiva desenvolvida para 
 
 #### Condicional
 ```
-se <condição> entao {
+if <condição> then {
     // código
-} senao {
+} else {
     // código
 }
 ```
 
 #### Repetição
 ```
-enquanto <condição> faca {
+while <condição> do {
     // código
 }
 ```
 
 ### Entrada e Saída
-- `leia(variavel)`: Lê um valor do usuário
-- `escreva(expressao)`: Exibe um valor na tela
+- `get(variavel)`: Lê um valor do usuário
+- `put(expressao)`: Exibe um valor na tela
 
 ### Declaração de Variáveis
 ```
-inteiro numero = 42;
-texto mensagem = "Olá, mundo!";
+integer numero = 42;
+text mensagem = "Olá, mundo!";
 ```
 
 ## Exemplos
 
 ### Exemplo 1: Triângulo de Pascal
 ```
-inteiro n = 0;
-escreva("Digite o número de linhas: ");
-leia(n);
+integer n = 0;
+put("Digite o número de linhas: ");
+get(n);
 
-se n <= 0 entao {
-    escreva("Erro: número deve ser maior que zero!");
-} senao {
-    inteiro linha = 1;
-    enquanto linha <= n faca {
-        inteiro coluna = 1;
-        enquanto coluna <= linha faca {
+if n <= 0 then {
+    put("Erro: número deve ser maior que zero!");
+} else {
+    integer linha = 1;
+    while linha <= n do {
+        integer coluna = 1;
+        while coluna <= linha do {
+            put("*");
             coluna = coluna + 1;
         }
+        put("\n");
         linha = linha + 1;
     }
 }
 ```
 ### Exemplo 2: Classificação de triangulos
 ```
-inteiro a = 0;
-inteiro b = 0;
-inteiro c = 0;
+integer a = 0;
+integer b = 0;
+integer c = 0;
 
-escreva("Digite os três lados do triângulo:");
-leia(a);
-leia(b);
-leia(c);
+put("Digite os três lados do triângulo:");
+get(a);
+get(b);
+get(c);
 
-se (a <= 0) || (b <= 0) || (c <= 0) entao {
-    escreva("Erro: os lados devem ser positivos!");
-} senao {
-    se (a + b <= c) || (b + c <= a) || (a + c <= b) entao {
-        escreva("Não forma um triângulo!");
-    } senao {
-        se (a == b) && (b == c) entao {
-            escreva("Triângulo Equilátero");
-        } senao {
-            se (a == b) || (b == c) || (a == c) entao {
-                escreva("Triângulo Isósceles");
-            } senao {
-                escreva("Triângulo Escaleno");
+if (a <= 0) || (b <= 0) || (c <= 0) then {
+    put("Erro: os lados devem ser positivos!");
+} else {
+    if (a + b <= c) || (b + c <= a) || (a + c <= b) then {
+        put("Não forma um triângulo!");
+    } else {
+        if (a == b) && (b == c) then {
+            put("Triângulo Equilátero");
+        } else {
+            if (a == b) || (b == c) || (a == c) then {
+                put("Triângulo Isósceles");
+            } else {
+                put("Triângulo Escaleno");
             }
         }
     }
@@ -174,7 +176,6 @@ O projeto usa ANTLR4 para geração do analisador léxico e sintático. A gramá
 java -cp "lib\antlr-4.13.1-complete.jar" org.antlr.v4.Tool -package grammar grammar\Fuelang.g4
 javac -cp "lib\antlr-4.13.1-complete.jar" grammar\*.java
 ```
-
 
 ## Autores
 

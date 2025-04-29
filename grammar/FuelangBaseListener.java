@@ -17,265 +17,265 @@ public class FuelangBaseListener implements FuelangListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrograma(FuelangParser.ProgramaContext ctx) { }
+	@Override public void enterProgram(FuelangParser.ProgramContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrograma(FuelangParser.ProgramaContext ctx) { }
+	@Override public void exitProgram(FuelangParser.ProgramContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDeclaracoes(FuelangParser.DeclaracoesContext ctx) { }
+	@Override public void enterDeclarations(FuelangParser.DeclarationsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDeclaracoes(FuelangParser.DeclaracoesContext ctx) { }
+	@Override public void exitDeclarations(FuelangParser.DeclarationsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDeclaracao(FuelangParser.DeclaracaoContext ctx) { }
+	@Override public void enterDeclaration(FuelangParser.DeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDeclaracao(FuelangParser.DeclaracaoContext ctx) { }
+	@Override public void exitDeclaration(FuelangParser.DeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDeclaracaoVariavel(FuelangParser.DeclaracaoVariavelContext ctx) { }
+	@Override public void enterVariableDeclaration(FuelangParser.VariableDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDeclaracaoVariavel(FuelangParser.DeclaracaoVariavelContext ctx) { }
+	@Override public void exitVariableDeclaration(FuelangParser.VariableDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterComando(FuelangParser.ComandoContext ctx) { }
+	@Override public void enterCommand(FuelangParser.CommandContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitComando(FuelangParser.ComandoContext ctx) { }
+	@Override public void exitCommand(FuelangParser.CommandContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterComandoEntrada(FuelangParser.ComandoEntradaContext ctx) { }
+	@Override public void enterInputCommand(FuelangParser.InputCommandContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitComandoEntrada(FuelangParser.ComandoEntradaContext ctx) { }
+	@Override public void exitInputCommand(FuelangParser.InputCommandContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterComandoSaida(FuelangParser.ComandoSaidaContext ctx) { }
+	@Override public void enterOutputCommand(FuelangParser.OutputCommandContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitComandoSaida(FuelangParser.ComandoSaidaContext ctx) { }
+	@Override public void exitOutputCommand(FuelangParser.OutputCommandContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAtribuicao(FuelangParser.AtribuicaoContext ctx) { }
+	@Override public void enterAssignment(FuelangParser.AssignmentContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAtribuicao(FuelangParser.AtribuicaoContext ctx) { }
+	@Override public void exitAssignment(FuelangParser.AssignmentContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterComandoIf(FuelangParser.ComandoIfContext ctx) { }
+	@Override public void enterIfCommand(FuelangParser.IfCommandContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitComandoIf(FuelangParser.ComandoIfContext ctx) { }
+	@Override public void exitIfCommand(FuelangParser.IfCommandContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterComandoWhile(FuelangParser.ComandoWhileContext ctx) { }
+	@Override public void enterWhileCommand(FuelangParser.WhileCommandContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitComandoWhile(FuelangParser.ComandoWhileContext ctx) { }
+	@Override public void exitWhileCommand(FuelangParser.WhileCommandContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBloco(FuelangParser.BlocoContext ctx) { }
+	@Override public void enterBlock(FuelangParser.BlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBloco(FuelangParser.BlocoContext ctx) { }
+	@Override public void exitBlock(FuelangParser.BlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpressao(FuelangParser.ExpressaoContext ctx) { }
+	@Override public void enterExpression(FuelangParser.ExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpressao(FuelangParser.ExpressaoContext ctx) { }
+	@Override public void exitExpression(FuelangParser.ExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpressaoAritmetica(FuelangParser.ExpressaoAritmeticaContext ctx) { }
+	@Override public void enterArithmeticExpression(FuelangParser.ArithmeticExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpressaoAritmetica(FuelangParser.ExpressaoAritmeticaContext ctx) { }
+	@Override public void exitArithmeticExpression(FuelangParser.ArithmeticExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTermo(FuelangParser.TermoContext ctx) { }
+	@Override public void enterTerm(FuelangParser.TermContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTermo(FuelangParser.TermoContext ctx) { }
+	@Override public void exitTerm(FuelangParser.TermContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOperadorAritmetico(FuelangParser.OperadorAritmeticoContext ctx) { }
+	@Override public void enterArithmeticOperator(FuelangParser.ArithmeticOperatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOperadorAritmetico(FuelangParser.OperadorAritmeticoContext ctx) { }
+	@Override public void exitArithmeticOperator(FuelangParser.ArithmeticOperatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOperadorTermo(FuelangParser.OperadorTermoContext ctx) { }
+	@Override public void enterTermOperator(FuelangParser.TermOperatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOperadorTermo(FuelangParser.OperadorTermoContext ctx) { }
+	@Override public void exitTermOperator(FuelangParser.TermOperatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFator(FuelangParser.FatorContext ctx) { }
+	@Override public void enterFactor(FuelangParser.FactorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFator(FuelangParser.FatorContext ctx) { }
+	@Override public void exitFactor(FuelangParser.FactorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpressaoLogica(FuelangParser.ExpressaoLogicaContext ctx) { }
+	@Override public void enterLogicalExpression(FuelangParser.LogicalExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpressaoLogica(FuelangParser.ExpressaoLogicaContext ctx) { }
+	@Override public void exitLogicalExpression(FuelangParser.LogicalExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTermoLogico(FuelangParser.TermoLogicoContext ctx) { }
+	@Override public void enterLogicalTerm(FuelangParser.LogicalTermContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTermoLogico(FuelangParser.TermoLogicoContext ctx) { }
+	@Override public void exitLogicalTerm(FuelangParser.LogicalTermContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFatorLogico(FuelangParser.FatorLogicoContext ctx) { }
+	@Override public void enterLogicalFactor(FuelangParser.LogicalFactorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFatorLogico(FuelangParser.FatorLogicoContext ctx) { }
+	@Override public void exitLogicalFactor(FuelangParser.LogicalFactorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterComparacao(FuelangParser.ComparacaoContext ctx) { }
+	@Override public void enterComparison(FuelangParser.ComparisonContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitComparacao(FuelangParser.ComparacaoContext ctx) { }
+	@Override public void exitComparison(FuelangParser.ComparisonContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOperadorComp(FuelangParser.OperadorCompContext ctx) { }
+	@Override public void enterComparisonOperator(FuelangParser.ComparisonOperatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOperadorComp(FuelangParser.OperadorCompContext ctx) { }
+	@Override public void exitComparisonOperator(FuelangParser.ComparisonOperatorContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

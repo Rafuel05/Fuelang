@@ -8,223 +8,223 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface FuelangListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#programa}.
+	 * Enter a parse tree produced by {@link FuelangParser#program}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrograma(FuelangParser.ProgramaContext ctx);
+	void enterProgram(FuelangParser.ProgramContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#programa}.
+	 * Exit a parse tree produced by {@link FuelangParser#program}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrograma(FuelangParser.ProgramaContext ctx);
+	void exitProgram(FuelangParser.ProgramContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#declaracoes}.
+	 * Enter a parse tree produced by {@link FuelangParser#declarations}.
 	 * @param ctx the parse tree
 	 */
-	void enterDeclaracoes(FuelangParser.DeclaracoesContext ctx);
+	void enterDeclarations(FuelangParser.DeclarationsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#declaracoes}.
+	 * Exit a parse tree produced by {@link FuelangParser#declarations}.
 	 * @param ctx the parse tree
 	 */
-	void exitDeclaracoes(FuelangParser.DeclaracoesContext ctx);
+	void exitDeclarations(FuelangParser.DeclarationsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#declaracao}.
+	 * Enter a parse tree produced by {@link FuelangParser#declaration}.
 	 * @param ctx the parse tree
 	 */
-	void enterDeclaracao(FuelangParser.DeclaracaoContext ctx);
+	void enterDeclaration(FuelangParser.DeclarationContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#declaracao}.
+	 * Exit a parse tree produced by {@link FuelangParser#declaration}.
 	 * @param ctx the parse tree
 	 */
-	void exitDeclaracao(FuelangParser.DeclaracaoContext ctx);
+	void exitDeclaration(FuelangParser.DeclarationContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#declaracaoVariavel}.
+	 * Enter a parse tree produced by {@link FuelangParser#variableDeclaration}.
 	 * @param ctx the parse tree
 	 */
-	void enterDeclaracaoVariavel(FuelangParser.DeclaracaoVariavelContext ctx);
+	void enterVariableDeclaration(FuelangParser.VariableDeclarationContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#declaracaoVariavel}.
+	 * Exit a parse tree produced by {@link FuelangParser#variableDeclaration}.
 	 * @param ctx the parse tree
 	 */
-	void exitDeclaracaoVariavel(FuelangParser.DeclaracaoVariavelContext ctx);
+	void exitVariableDeclaration(FuelangParser.VariableDeclarationContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#comando}.
+	 * Enter a parse tree produced by {@link FuelangParser#command}.
 	 * @param ctx the parse tree
 	 */
-	void enterComando(FuelangParser.ComandoContext ctx);
+	void enterCommand(FuelangParser.CommandContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#comando}.
+	 * Exit a parse tree produced by {@link FuelangParser#command}.
 	 * @param ctx the parse tree
 	 */
-	void exitComando(FuelangParser.ComandoContext ctx);
+	void exitCommand(FuelangParser.CommandContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#comandoEntrada}.
+	 * Enter a parse tree produced by {@link FuelangParser#inputCommand}.
 	 * @param ctx the parse tree
 	 */
-	void enterComandoEntrada(FuelangParser.ComandoEntradaContext ctx);
+	void enterInputCommand(FuelangParser.InputCommandContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#comandoEntrada}.
+	 * Exit a parse tree produced by {@link FuelangParser#inputCommand}.
 	 * @param ctx the parse tree
 	 */
-	void exitComandoEntrada(FuelangParser.ComandoEntradaContext ctx);
+	void exitInputCommand(FuelangParser.InputCommandContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#comandoSaida}.
+	 * Enter a parse tree produced by {@link FuelangParser#outputCommand}.
 	 * @param ctx the parse tree
 	 */
-	void enterComandoSaida(FuelangParser.ComandoSaidaContext ctx);
+	void enterOutputCommand(FuelangParser.OutputCommandContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#comandoSaida}.
+	 * Exit a parse tree produced by {@link FuelangParser#outputCommand}.
 	 * @param ctx the parse tree
 	 */
-	void exitComandoSaida(FuelangParser.ComandoSaidaContext ctx);
+	void exitOutputCommand(FuelangParser.OutputCommandContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#atribuicao}.
+	 * Enter a parse tree produced by {@link FuelangParser#assignment}.
 	 * @param ctx the parse tree
 	 */
-	void enterAtribuicao(FuelangParser.AtribuicaoContext ctx);
+	void enterAssignment(FuelangParser.AssignmentContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#atribuicao}.
+	 * Exit a parse tree produced by {@link FuelangParser#assignment}.
 	 * @param ctx the parse tree
 	 */
-	void exitAtribuicao(FuelangParser.AtribuicaoContext ctx);
+	void exitAssignment(FuelangParser.AssignmentContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#comandoIf}.
+	 * Enter a parse tree produced by {@link FuelangParser#ifCommand}.
 	 * @param ctx the parse tree
 	 */
-	void enterComandoIf(FuelangParser.ComandoIfContext ctx);
+	void enterIfCommand(FuelangParser.IfCommandContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#comandoIf}.
+	 * Exit a parse tree produced by {@link FuelangParser#ifCommand}.
 	 * @param ctx the parse tree
 	 */
-	void exitComandoIf(FuelangParser.ComandoIfContext ctx);
+	void exitIfCommand(FuelangParser.IfCommandContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#comandoWhile}.
+	 * Enter a parse tree produced by {@link FuelangParser#whileCommand}.
 	 * @param ctx the parse tree
 	 */
-	void enterComandoWhile(FuelangParser.ComandoWhileContext ctx);
+	void enterWhileCommand(FuelangParser.WhileCommandContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#comandoWhile}.
+	 * Exit a parse tree produced by {@link FuelangParser#whileCommand}.
 	 * @param ctx the parse tree
 	 */
-	void exitComandoWhile(FuelangParser.ComandoWhileContext ctx);
+	void exitWhileCommand(FuelangParser.WhileCommandContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#bloco}.
+	 * Enter a parse tree produced by {@link FuelangParser#block}.
 	 * @param ctx the parse tree
 	 */
-	void enterBloco(FuelangParser.BlocoContext ctx);
+	void enterBlock(FuelangParser.BlockContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#bloco}.
+	 * Exit a parse tree produced by {@link FuelangParser#block}.
 	 * @param ctx the parse tree
 	 */
-	void exitBloco(FuelangParser.BlocoContext ctx);
+	void exitBlock(FuelangParser.BlockContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#expressao}.
+	 * Enter a parse tree produced by {@link FuelangParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpressao(FuelangParser.ExpressaoContext ctx);
+	void enterExpression(FuelangParser.ExpressionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#expressao}.
+	 * Exit a parse tree produced by {@link FuelangParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpressao(FuelangParser.ExpressaoContext ctx);
+	void exitExpression(FuelangParser.ExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#expressaoAritmetica}.
+	 * Enter a parse tree produced by {@link FuelangParser#arithmeticExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpressaoAritmetica(FuelangParser.ExpressaoAritmeticaContext ctx);
+	void enterArithmeticExpression(FuelangParser.ArithmeticExpressionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#expressaoAritmetica}.
+	 * Exit a parse tree produced by {@link FuelangParser#arithmeticExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpressaoAritmetica(FuelangParser.ExpressaoAritmeticaContext ctx);
+	void exitArithmeticExpression(FuelangParser.ArithmeticExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#termo}.
+	 * Enter a parse tree produced by {@link FuelangParser#term}.
 	 * @param ctx the parse tree
 	 */
-	void enterTermo(FuelangParser.TermoContext ctx);
+	void enterTerm(FuelangParser.TermContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#termo}.
+	 * Exit a parse tree produced by {@link FuelangParser#term}.
 	 * @param ctx the parse tree
 	 */
-	void exitTermo(FuelangParser.TermoContext ctx);
+	void exitTerm(FuelangParser.TermContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#operadorAritmetico}.
+	 * Enter a parse tree produced by {@link FuelangParser#arithmeticOperator}.
 	 * @param ctx the parse tree
 	 */
-	void enterOperadorAritmetico(FuelangParser.OperadorAritmeticoContext ctx);
+	void enterArithmeticOperator(FuelangParser.ArithmeticOperatorContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#operadorAritmetico}.
+	 * Exit a parse tree produced by {@link FuelangParser#arithmeticOperator}.
 	 * @param ctx the parse tree
 	 */
-	void exitOperadorAritmetico(FuelangParser.OperadorAritmeticoContext ctx);
+	void exitArithmeticOperator(FuelangParser.ArithmeticOperatorContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#operadorTermo}.
+	 * Enter a parse tree produced by {@link FuelangParser#termOperator}.
 	 * @param ctx the parse tree
 	 */
-	void enterOperadorTermo(FuelangParser.OperadorTermoContext ctx);
+	void enterTermOperator(FuelangParser.TermOperatorContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#operadorTermo}.
+	 * Exit a parse tree produced by {@link FuelangParser#termOperator}.
 	 * @param ctx the parse tree
 	 */
-	void exitOperadorTermo(FuelangParser.OperadorTermoContext ctx);
+	void exitTermOperator(FuelangParser.TermOperatorContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#fator}.
+	 * Enter a parse tree produced by {@link FuelangParser#factor}.
 	 * @param ctx the parse tree
 	 */
-	void enterFator(FuelangParser.FatorContext ctx);
+	void enterFactor(FuelangParser.FactorContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#fator}.
+	 * Exit a parse tree produced by {@link FuelangParser#factor}.
 	 * @param ctx the parse tree
 	 */
-	void exitFator(FuelangParser.FatorContext ctx);
+	void exitFactor(FuelangParser.FactorContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#expressaoLogica}.
+	 * Enter a parse tree produced by {@link FuelangParser#logicalExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpressaoLogica(FuelangParser.ExpressaoLogicaContext ctx);
+	void enterLogicalExpression(FuelangParser.LogicalExpressionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#expressaoLogica}.
+	 * Exit a parse tree produced by {@link FuelangParser#logicalExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpressaoLogica(FuelangParser.ExpressaoLogicaContext ctx);
+	void exitLogicalExpression(FuelangParser.LogicalExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#termoLogico}.
+	 * Enter a parse tree produced by {@link FuelangParser#logicalTerm}.
 	 * @param ctx the parse tree
 	 */
-	void enterTermoLogico(FuelangParser.TermoLogicoContext ctx);
+	void enterLogicalTerm(FuelangParser.LogicalTermContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#termoLogico}.
+	 * Exit a parse tree produced by {@link FuelangParser#logicalTerm}.
 	 * @param ctx the parse tree
 	 */
-	void exitTermoLogico(FuelangParser.TermoLogicoContext ctx);
+	void exitLogicalTerm(FuelangParser.LogicalTermContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#fatorLogico}.
+	 * Enter a parse tree produced by {@link FuelangParser#logicalFactor}.
 	 * @param ctx the parse tree
 	 */
-	void enterFatorLogico(FuelangParser.FatorLogicoContext ctx);
+	void enterLogicalFactor(FuelangParser.LogicalFactorContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#fatorLogico}.
+	 * Exit a parse tree produced by {@link FuelangParser#logicalFactor}.
 	 * @param ctx the parse tree
 	 */
-	void exitFatorLogico(FuelangParser.FatorLogicoContext ctx);
+	void exitLogicalFactor(FuelangParser.LogicalFactorContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#comparacao}.
+	 * Enter a parse tree produced by {@link FuelangParser#comparison}.
 	 * @param ctx the parse tree
 	 */
-	void enterComparacao(FuelangParser.ComparacaoContext ctx);
+	void enterComparison(FuelangParser.ComparisonContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#comparacao}.
+	 * Exit a parse tree produced by {@link FuelangParser#comparison}.
 	 * @param ctx the parse tree
 	 */
-	void exitComparacao(FuelangParser.ComparacaoContext ctx);
+	void exitComparison(FuelangParser.ComparisonContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuelangParser#operadorComp}.
+	 * Enter a parse tree produced by {@link FuelangParser#comparisonOperator}.
 	 * @param ctx the parse tree
 	 */
-	void enterOperadorComp(FuelangParser.OperadorCompContext ctx);
+	void enterComparisonOperator(FuelangParser.ComparisonOperatorContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuelangParser#operadorComp}.
+	 * Exit a parse tree produced by {@link FuelangParser#comparisonOperator}.
 	 * @param ctx the parse tree
 	 */
-	void exitOperadorComp(FuelangParser.OperadorCompContext ctx);
+	void exitComparisonOperator(FuelangParser.ComparisonOperatorContext ctx);
 }
