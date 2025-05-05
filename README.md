@@ -120,9 +120,7 @@ Fuelang/
 ├── lib/                     # Bibliotecas (ANTLR)
 ├── test/
 │   └── examples/           # Exemplos de programas .fuel
-├── analyze.bat             # Script principal
-├── visualize_tree.bat      # Visualizador de AST
-└── run_tokenizer.bat       # Analisador léxico
+└── analyze.bat             # Script principal
 ```
 
 ### Executando um Programa
