@@ -121,8 +121,6 @@ Fuelang/
 ├── test/
 │   └── examples/           # Exemplos de programas .fuel
 ├── analyze.bat             # Script principal
-├── visualize_tree.bat      # Visualizador de AST
-└── run_tokenizer.bat       # Analisador léxico
 ```
 
 ### Executando um Programa
