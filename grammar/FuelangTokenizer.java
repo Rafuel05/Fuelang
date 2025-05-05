@@ -6,11 +6,6 @@ import java.io.*;
 
 public class FuelangTokenizer {
     public static void main(String[] args) {
-        if (args.length < 1) {
-            System.err.println("Uso: java FuelangTokenizer <arquivo.fuel> [-dot]");
-            System.exit(1);
-        }
-
         try {
             // Carregar o arquivo fonte
             CharStream input = CharStreams.fromFileName(args[0]);
