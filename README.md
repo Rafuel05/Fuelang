@@ -120,7 +120,7 @@ Fuelang/
 ├── lib/                     # Bibliotecas (ANTLR)
 ├── test/
 │   └── examples/           # Exemplos de programas .fuel
-├── analyze.bat             # Script principal
+└── analyze.bat             # Script principal
 ```
 
 ### Executando um Programa
