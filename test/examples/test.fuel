@@ -1,4 +1,4 @@
 
 text texto = "txt";
 
-integer z = "texto"; 
+integer z = 123; 
