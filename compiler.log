@@ -1,0 +1,129 @@
+[2025-05-22T10:23:06.4766059] Iniciando análise semântica...
+[2025-05-22T10:23:06.4896057] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-22T10:23:06.4906072] [SEMÂNTICA] Verificando declaração da variável: x
+[2025-05-22T10:23:06.4936055] [SEMÂNTICA] Declarada variável 'x' do tipo integer
+[2025-05-22T10:23:06.4936055] [SEMÂNTICA] Verificando declaração da variável: y
+[2025-05-22T10:23:06.4946068] [SEMÂNTICA] Declarada variável 'y' do tipo integer
+[2025-05-22T10:23:06.4946068] [SEMÂNTICA] Verificando declaração da variável: msg
+[2025-05-22T10:23:51.5014585] Iniciando análise semântica...
+[2025-05-22T10:23:51.5124585] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-22T10:23:51.5134591] [SEMÂNTICA] Verificando declaração da variável: x
+[2025-05-22T10:23:51.5144589] [SEMÂNTICA] Declarada variável 'x' do tipo integer
+[2025-05-22T10:23:51.5154587] [SEMÂNTICA] Verificando declaração da variável: y
+[2025-05-22T10:23:51.5154587] [SEMÂNTICA] Declarada variável 'y' do tipo integer
+[2025-05-22T10:23:51.5154587] [SEMÂNTICA] Verificando declaração da variável: msg
+[2025-05-22T10:27:43.1265391] Iniciando análise semântica...
+[2025-05-22T10:27:43.1375372] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-22T10:27:43.1385393] [SEMÂNTICA] Verificando declaração da variável: x
+[2025-05-22T10:27:43.1415393] [SEMÂNTICA] Declarada variável 'x' do tipo integer
+[2025-05-22T10:27:43.1425393] [SEMÂNTICA] Verificando declaração da variável: y
+[2025-05-22T10:27:43.1435426] [SEMÂNTICA] Declarada variável 'y' do tipo integer
+[2025-05-22T10:27:43.1445445] [SEMÂNTICA] Verificando declaração da variável: msg
+[2025-05-22T10:27:43.5080999] Iniciando análise semântica...
+[2025-05-22T10:27:43.5170986] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-22T10:27:43.5180986] [SEMÂNTICA] Verificando declaração da variável: x
+[2025-05-22T10:27:43.520101] [SEMÂNTICA] Declarada variável 'x' do tipo integer
+[2025-05-22T10:27:43.5210999] [SEMÂNTICA] Verificando declaração da variável: y
+[2025-05-22T10:27:43.5210999] [SEMÂNTICA] Declarada variável 'y' do tipo integer
+[2025-05-22T10:27:43.5210999] [SEMÂNTICA] Verificando declaração da variável: msg
+[2025-05-22T10:28:13.1702427] Iniciando análise semântica...
+[2025-05-22T10:28:13.1791886] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-22T10:28:13.1791886] [SEMÂNTICA] Verificando declaração da variável: x
+[2025-05-22T10:28:13.1812826] [SEMÂNTICA] Declarada variável 'x' do tipo integer
+[2025-05-22T10:28:13.1812826] [SEMÂNTICA] Verificando declaração da variável: y
+[2025-05-22T10:28:13.1821923] [SEMÂNTICA] Declarada variável 'y' do tipo integer
+[2025-05-22T10:28:13.1821923] [SEMÂNTICA] Verificando declaração da variável: msg
+[2025-05-22T10:28:58.9036281] Iniciando análise semântica...
+[2025-05-22T10:28:58.9186353] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-22T10:28:58.9186353] [SEMÂNTICA] Verificando declaração da variável: n
+[2025-05-22T10:28:58.9206334] [SEMÂNTICA] Declarada variável 'n' do tipo integer
+[2025-05-22T10:28:58.92174] [SEMÂNTICA] Verificando expressão lógica
+[2025-05-22T10:28:58.922633] [SEMÂNTICA] Entrando em novo escopo
+[2025-05-22T10:28:58.922633] [SEMÂNTICA] Saindo do escopo
+[2025-05-22T10:28:58.9236309] [SEMÂNTICA] Entrando em novo escopo
+[2025-05-22T10:28:58.9236309] [SEMÂNTICA] Verificando declaração da variável: linha
+[2025-05-22T10:28:58.9246375] [SEMÂNTICA] Declarada variável 'linha' do tipo integer
+[2025-05-22T10:28:58.9246375] [SEMÂNTICA] Verificando expressão lógica
+[2025-05-22T10:28:58.9256317] [SEMÂNTICA] Entrando em novo escopo
+[2025-05-22T10:28:58.9256317] [SEMÂNTICA] Verificando declaração da variável: coluna
+[2025-05-22T10:28:58.9266341] [SEMÂNTICA] Declarada variável 'coluna' do tipo integer
+[2025-05-22T10:28:58.9266341] [SEMÂNTICA] Verificando expressão lógica
+[2025-05-22T10:28:58.9276339] [SEMÂNTICA] Entrando em novo escopo
+[2025-05-22T10:28:58.9276339] [SEMÂNTICA] Verificando atribuição à variável: coluna
+[2025-05-22T10:28:58.9286462] [SEMÂNTICA] Saindo do escopo
+[2025-05-22T10:28:58.9296341] [SEMÂNTICA] Verificando atribuição à variável: linha
+[2025-05-22T10:28:58.930634] [SEMÂNTICA] Saindo do escopo
+[2025-05-22T10:28:58.930634] [SEMÂNTICA] Saindo do escopo
+[2025-05-22T10:28:58.9316365] Análise semântica concluída com sucesso!
+[2025-05-22T10:28:59.3576388] Iniciando análise semântica...
+[2025-05-22T10:28:59.368642] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-22T10:28:59.3696367] [SEMÂNTICA] Verificando declaração da variável: n
+[2025-05-22T10:28:59.3716366] [SEMÂNTICA] Declarada variável 'n' do tipo integer
+[2025-05-22T10:28:59.3716366] [SEMÂNTICA] Verificando expressão lógica
+[2025-05-22T10:28:59.3726377] [SEMÂNTICA] Entrando em novo escopo
+[2025-05-22T10:28:59.3726377] [SEMÂNTICA] Saindo do escopo
+[2025-05-22T10:28:59.3726377] [SEMÂNTICA] Entrando em novo escopo
+[2025-05-22T10:28:59.3736369] [SEMÂNTICA] Verificando declaração da variável: linha
+[2025-05-22T10:28:59.3736369] [SEMÂNTICA] Declarada variável 'linha' do tipo integer
+[2025-05-22T10:28:59.3736369] [SEMÂNTICA] Verificando expressão lógica
+[2025-05-22T10:28:59.3746361] [SEMÂNTICA] Entrando em novo escopo
+[2025-05-22T10:28:59.3746361] [SEMÂNTICA] Verificando declaração da variável: coluna
+[2025-05-22T10:28:59.3746361] [SEMÂNTICA] Declarada variável 'coluna' do tipo integer
+[2025-05-22T10:28:59.3756365] [SEMÂNTICA] Verificando expressão lógica
+[2025-05-22T10:28:59.3756365] [SEMÂNTICA] Entrando em novo escopo
+[2025-05-22T10:28:59.3766408] [SEMÂNTICA] Verificando atribuição à variável: coluna
+[2025-05-22T10:28:59.3766408] [SEMÂNTICA] Saindo do escopo
+[2025-05-22T10:28:59.3776401] [SEMÂNTICA] Verificando atribuição à variável: linha
+[2025-05-22T10:28:59.3776401] [SEMÂNTICA] Saindo do escopo
+[2025-05-22T10:28:59.382642] [SEMÂNTICA] Saindo do escopo
+[2025-05-22T10:28:59.3836418] Análise semântica concluída com sucesso!
+[2025-05-22T10:32:43.7328911] Iniciando análise semântica...
+[2025-05-22T10:32:43.7489132] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-22T10:32:43.7489132] [SEMÂNTICA] Verificando declaração da variável: x
+[2025-05-22T10:32:43.7519077] [SEMÂNTICA] Declarada variável 'x' do tipo integer
+[2025-05-22T10:32:43.7519077] [SEMÂNTICA] Verificando declaração da variável: y
+[2025-05-22T10:32:43.7528985] [SEMÂNTICA] Declarada variável 'y' do tipo integer
+[2025-05-22T10:32:43.7528985] [SEMÂNTICA] Verificando declaração da variável: msg
+[2025-05-22T10:32:44.1282693] Iniciando análise semântica...
+[2025-05-22T10:32:44.1402706] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-22T10:32:44.14127] [SEMÂNTICA] Verificando declaração da variável: x
+[2025-05-22T10:32:44.1422698] [SEMÂNTICA] Declarada variável 'x' do tipo integer
+[2025-05-22T10:32:44.1432696] [SEMÂNTICA] Verificando declaração da variável: y
+[2025-05-22T10:32:44.1442736] [SEMÂNTICA] Declarada variável 'y' do tipo integer
+[2025-05-22T10:32:44.1442736] [SEMÂNTICA] Verificando declaração da variável: msg
+[2025-05-22T10:33:28.4891923] Iniciando análise semântica...
+[2025-05-22T10:33:28.5021952] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-22T10:33:28.5031935] [SEMÂNTICA] Verificando declaração da variável: x
+[2025-05-22T10:33:28.5053855] [SEMÂNTICA] Declarada variável 'x' do tipo integer
+[2025-05-22T10:33:28.5063844] [SEMÂNTICA] Verificando declaração da variável: y
+[2025-05-22T10:33:28.5063844] [SEMÂNTICA] Declarada variável 'y' do tipo integer
+[2025-05-22T10:33:28.5073848] [SEMÂNTICA] Verificando declaração da variável: msg
+[2025-05-22T10:33:28.8420016] Iniciando análise semântica...
+[2025-05-22T10:33:28.8530004] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-22T10:33:28.8539957] [SEMÂNTICA] Verificando declaração da variável: x
+[2025-05-22T10:33:28.8560004] [SEMÂNTICA] Declarada variável 'x' do tipo integer
+[2025-05-22T10:33:28.8560004] [SEMÂNTICA] Verificando declaração da variável: y
+[2025-05-22T10:33:28.8569988] [SEMÂNTICA] Declarada variável 'y' do tipo integer
+[2025-05-22T10:33:28.8569988] [SEMÂNTICA] Verificando declaração da variável: msg
+[2025-05-22T10:34:01.1531265] Iniciando análise semântica...
+[2025-05-22T10:34:01.1631264] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-22T10:34:01.1641213] [SEMÂNTICA] Verificando declaração da variável: z
+[2025-05-22T10:34:01.4981624] Iniciando análise semântica...
+[2025-05-22T10:34:01.5111252] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-22T10:34:01.5121238] [SEMÂNTICA] Verificando declaração da variável: z
+[2025-05-22T10:34:34.9042282] Iniciando análise semântica...
+[2025-05-22T10:34:34.9192357] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-22T10:34:34.9192357] [SEMÂNTICA] Verificando declaração da variável: z
+[2025-05-22T10:34:35.2943747] Iniciando análise semântica...
+[2025-05-22T10:34:35.3053793] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-22T10:34:35.3053793] [SEMÂNTICA] Verificando declaração da variável: z
+[2025-05-22T10:35:00.6847451] Iniciando análise semântica...
+[2025-05-22T10:35:00.6949944] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-22T10:35:00.6949944] [SEMÂNTICA] Verificando declaração da variável: texto
+[2025-05-22T10:35:01.071037] Iniciando análise semântica...
+[2025-05-22T10:35:01.0830961] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-22T10:35:01.0840866] [SEMÂNTICA] Verificando declaração da variável: texto
+[2025-05-22T10:41:17.8052921] Iniciando análise semântica...
+[2025-05-22T10:41:17.8232869] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-22T10:41:18.1835928] Iniciando análise semântica...
+[2025-05-22T10:41:18.1965902] [SEMÂNTICA] Iniciando análise semântica do programa
