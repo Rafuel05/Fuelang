@@ -165,6 +165,39 @@ Fuelang/
    ERRO SINTÁTICO [Linha X, Coluna Y]: Esperado 'Z', encontrado 'W'
    ```
 
+3. **Erros Semânticos**
+   Tipos de erros semânticos detectados:
+- **Declaração Duplicada**: Tentativa de declarar uma variável que já existe no mesmo escopo
+  ```
+  ERRO SEMÂNTICO [Linha X, Coluna Y]: Variável 'nome' já foi declarada na linha Z
+  ```
+
+- **Variável Não Declarada**: Uso de variável que não foi declarada
+  ```
+  ERRO SEMÂNTICO [Linha X, Coluna Y]: Variável 'nome' não foi declarada
+  ```
+
+- **Incompatibilidade de Tipos**: Tentativa de atribuir valor de um tipo a uma variável de outro tipo
+  ```
+  ERRO SEMÂNTICO [Linha X, Coluna Y]: Tipo incompatível: não é possível atribuir valor do tipo A a uma variável do tipo B
+  ```
+
+- **Operações Aritméticas Inválidas**: Uso de tipos não numéricos em operações aritméticas
+  ```
+  ERRO SEMÂNTICO [Linha X, Coluna Y]: Operações aritméticas requerem operandos inteiros
+  ```
+
+- **Comparações Inválidas**: Tentativa de comparar valores de tipos diferentes
+  ```
+  ERRO SEMÂNTICO [Linha X, Coluna Y]: Tipos incompatíveis na comparação: A e B
+  ```
+
+- **Expressões Inválidas**: Uso de expressões com estrutura ou tipos inválidos
+  ```
+  ERRO SEMÂNTICO [Linha X, Coluna Y]: Expressão inválida
+  ```
+
+
 ## Desenvolvimento
 
 O projeto usa ANTLR4 para geração do analisador léxico e sintático. A gramática está definida em `grammar/Fuelang.g4`.
