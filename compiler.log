@@ -143,3 +143,39 @@
 [2025-05-22T10:47:26.9154515] Iniciando análise semântica...
 [2025-05-22T10:47:26.929957] [SEMÂNTICA] Iniciando análise semântica do programa
 [2025-05-22T10:47:26.9319544] Análise semântica concluída com sucesso!
+[2025-05-27T08:24:24.8615213] Iniciando análise semântica...
+[2025-05-27T08:24:24.8732822] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-27T08:24:25.2571618] Iniciando análise semântica...
+[2025-05-27T08:24:25.3516631] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-27T08:27:25.7293415] Iniciando análise semântica...
+[2025-05-27T08:27:25.738718] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-27T08:27:26.2956893] Iniciando análise semântica...
+[2025-05-27T08:27:26.3042561] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-27T08:27:46.2673604] Iniciando análise semântica...
+[2025-05-27T08:27:46.2756886] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-27T08:27:46.2776932] [SEMÂNTICA] Verificando expressão lógica
+[2025-05-27T08:27:46.2786907] [SEMÂNTICA] Entrando em novo escopo
+[2025-05-27T08:27:46.2796909] [SEMÂNTICA] Saindo do escopo
+[2025-05-27T08:27:46.2796909] [SEMÂNTICA] Entrando em novo escopo
+[2025-05-27T08:27:46.2796909] [SEMÂNTICA] Verificando expressão lógica
+[2025-05-27T08:27:46.2796909] [SEMÂNTICA] Entrando em novo escopo
+[2025-05-27T08:27:46.2806892] [SEMÂNTICA] Verificando expressão lógica
+[2025-05-27T08:27:46.2806892] [SEMÂNTICA] Entrando em novo escopo
+[2025-05-27T08:27:46.2806892] [SEMÂNTICA] Saindo do escopo
+[2025-05-27T08:27:46.2806892] [SEMÂNTICA] Saindo do escopo
+[2025-05-27T08:27:46.2806892] [SEMÂNTICA] Saindo do escopo
+[2025-05-27T08:27:46.2806892] Análise semântica concluída com sucesso!
+[2025-05-27T08:27:46.5985011] Iniciando análise semântica...
+[2025-05-27T08:27:46.6075324] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-27T08:27:46.6085306] [SEMÂNTICA] Verificando expressão lógica
+[2025-05-27T08:27:46.6095334] [SEMÂNTICA] Entrando em novo escopo
+[2025-05-27T08:27:46.6095334] [SEMÂNTICA] Saindo do escopo
+[2025-05-27T08:27:46.6095334] [SEMÂNTICA] Entrando em novo escopo
+[2025-05-27T08:27:46.6105322] [SEMÂNTICA] Verificando expressão lógica
+[2025-05-27T08:27:46.6105322] [SEMÂNTICA] Entrando em novo escopo
+[2025-05-27T08:27:46.6105322] [SEMÂNTICA] Verificando expressão lógica
+[2025-05-27T08:27:46.6105322] [SEMÂNTICA] Entrando em novo escopo
+[2025-05-27T08:27:46.6105322] [SEMÂNTICA] Saindo do escopo
+[2025-05-27T08:27:46.6115317] [SEMÂNTICA] Saindo do escopo
+[2025-05-27T08:27:46.6115317] [SEMÂNTICA] Saindo do escopo
+[2025-05-27T08:27:46.6115317] Análise semântica concluída com sucesso!
