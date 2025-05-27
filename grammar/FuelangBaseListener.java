@@ -1,4 +1,4 @@
-// Generated from grammar/Fuelang.g4 by ANTLR 4.13.1
+// Generated from Fuelang.g4 by ANTLR 4.13.1
 package grammar;
 
 import org.antlr.v4.runtime.ParserRuleContext;

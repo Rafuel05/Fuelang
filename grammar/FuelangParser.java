@@ -1,4 +1,4 @@
-// Generated from grammar/Fuelang.g4 by ANTLR 4.13.1
+// Generated from Fuelang.g4 by ANTLR 4.13.1
 package grammar;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -141,6 +141,11 @@ public class FuelangParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitProgram(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitProgram(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ProgramContext program() throws RecognitionException {
@@ -185,6 +190,11 @@ public class FuelangParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitDeclarations(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitDeclarations(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -241,6 +251,11 @@ public class FuelangParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitDeclaration(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitDeclaration(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -305,6 +320,11 @@ public class FuelangParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitVariableDeclaration(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitVariableDeclaration(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final VariableDeclarationContext variableDeclaration() throws RecognitionException {
@@ -364,6 +384,11 @@ public class FuelangParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitCommand(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitCommand(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -443,6 +468,11 @@ public class FuelangParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitInputCommand(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitInputCommand(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final InputCommandContext inputCommand() throws RecognitionException {
@@ -495,6 +525,11 @@ public class FuelangParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitOutputCommand(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitOutputCommand(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final OutputCommandContext outputCommand() throws RecognitionException {
@@ -545,6 +580,11 @@ public class FuelangParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitAssignment(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitAssignment(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -600,6 +640,11 @@ public class FuelangParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitIfCommand(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitIfCommand(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -665,6 +710,11 @@ public class FuelangParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitWhileCommand(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitWhileCommand(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final WhileCommandContext whileCommand() throws RecognitionException {
@@ -713,6 +763,11 @@ public class FuelangParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitBlock(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitBlock(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final BlockContext block() throws RecognitionException {
@@ -760,6 +815,11 @@ public class FuelangParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitExpression(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -830,6 +890,11 @@ public class FuelangParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitArithmeticExpression(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitArithmeticExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ArithmeticExpressionContext arithmeticExpression() throws RecognitionException {
@@ -896,6 +961,11 @@ public class FuelangParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitTerm(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitTerm(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final TermContext term() throws RecognitionException {
@@ -952,6 +1022,11 @@ public class FuelangParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitArithmeticOperator(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitArithmeticOperator(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ArithmeticOperatorContext arithmeticOperator() throws RecognitionException {
@@ -999,6 +1074,11 @@ public class FuelangParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitTermOperator(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitTermOperator(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1052,6 +1132,11 @@ public class FuelangParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitFactor(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitFactor(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1126,6 +1211,11 @@ public class FuelangParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitLogicalExpression(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitLogicalExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final LogicalExpressionContext logicalExpression() throws RecognitionException {
@@ -1189,6 +1279,11 @@ public class FuelangParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitLogicalTerm(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitLogicalTerm(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1255,6 +1350,11 @@ public class FuelangParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitLogicalFactor(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitLogicalFactor(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1328,6 +1428,11 @@ public class FuelangParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitComparison(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitComparison(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ComparisonContext comparison() throws RecognitionException {
@@ -1374,6 +1479,11 @@ public class FuelangParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof FuelangListener ) ((FuelangListener)listener).exitComparisonOperator(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FuelangVisitor ) return ((FuelangVisitor<? extends T>)visitor).visitComparisonOperator(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 

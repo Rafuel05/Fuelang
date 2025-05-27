@@ -1,17 +1,16 @@
 package grammar;
 
+import grammar.semantics.*;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 import java.io.*;
 
 public class FuelangTokenizer {
     public static void main(String[] args) {
-        if (args.length < 1) {
-            System.err.println("Uso: java FuelangTokenizer <arquivo.fuel> [-dot]");
-            System.exit(1);
-        }
-
         try {
+            // Criar logger para mensagens do compilador
+            CompilerLogger logger = new CompilerLogger();
+            
             // Carregar o arquivo fonte
             CharStream input = CharStreams.fromFileName(args[0]);
             
@@ -44,7 +43,18 @@ public class FuelangTokenizer {
 
             try {
                 // Tentar fazer o parse
-                ParserRuleContext tree = parser.program();
+                FuelangParser.ProgramContext tree = parser.program();
+
+                // Análise semântica
+                try {
+                    logger.log("Iniciando análise semântica...");
+                    SemanticAnalyzer semanticAnalyzer = new SemanticAnalyzer(logger);
+                    semanticAnalyzer.visit(tree);
+                    logger.log("Análise semântica concluída com sucesso!");
+                } catch (SemanticError e) {
+                    System.err.println(e.getMessage());
+                    System.exit(1);
+                }
 
                 // Mostrar tokens se não for modo DOT
                 if (args.length == 1 || !args[1].equals("-dot")) {
