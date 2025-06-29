@@ -3,12 +3,13 @@ setlocal enabledelayedexpansion
 
 REM Verifica argumentos
 if [%1]==[] (
-    echo Uso: %0 arquivo.fuel [-t^|-g^|-d]
+    echo Uso: %0 arquivo.fuel [-t^|-g^|-d^|-tac]
     echo.
     echo Opcoes:
-    echo   -t  Mostrar tokens
-    echo   -g  Mostrar arvore grafica
-    echo   -d  Gerar arquivo DOT
+    echo   -t   Mostrar tokens
+    echo   -g   Mostrar arvore grafica
+    echo   -d   Gerar arquivo DOT
+    echo   -tac Gerar codigo TAC
     echo.
     exit /b 1
 )
@@ -24,6 +25,7 @@ del /Q grammar\*.class 2>nul
 del /Q grammar\*.interp 2>nul
 del /Q grammar\*.tokens 2>nul
 del /Q grammar\semantics\*.class 2>nul
+del /Q grammar\tac\*.class 2>nul
 
 REM Compila gramática
 echo === Compilando gramatica ===
@@ -47,6 +49,9 @@ javac -cp "lib/*" ^
     grammar\FuelangVisitor.java ^
     grammar\FuelangBaseVisitor.java ^
     grammar\semantics\SemanticAnalyzer.java ^
+    grammar\tac\TACOperand.java ^
+    grammar\tac\TACInstruction.java ^
+    grammar\tac\GeradorTAC.java ^
     grammar\FuelangTokenizer.java
 
 REM Define modo de execução
@@ -67,4 +72,7 @@ if %modo%==all (
     start javaw -cp "lib/*;." org.antlr.v4.gui.TestRig grammar.Fuelang program -gui %1
 ) else if %modo%==-d (
     java -cp "lib/*;." grammar.FuelangTokenizer %1 -dot
+) else if %modo%==-tac (
+    echo === Gerando codigo TAC ===
+    java -cp "lib/*;." grammar.FuelangTokenizer %1 -tac
 )
