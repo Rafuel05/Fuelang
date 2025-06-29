@@ -179,3 +179,34 @@
 [2025-05-27T08:27:46.6115317] [SEMÂNTICA] Saindo do escopo
 [2025-05-27T08:27:46.6115317] [SEMÂNTICA] Saindo do escopo
 [2025-05-27T08:27:46.6115317] Análise semântica concluída com sucesso!
+[2025-05-27T14:59:05.2093378] Iniciando análise semântica...
+[2025-05-27T14:59:05.2273409] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-27T14:59:05.7267749] Iniciando análise semântica...
+[2025-05-27T14:59:05.7381879] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-27T15:01:29.9090831] Iniciando análise semântica...
+[2025-05-27T15:01:29.9261059] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-05-27T15:01:30.282487] Iniciando análise semântica...
+[2025-05-27T15:01:30.2924869] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-06-29T16:00:14.0126812] Iniciando análise semântica...
+[2025-06-29T16:00:14.0346681] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-06-29T16:00:36.4336408] Iniciando análise semântica...
+[2025-06-29T16:00:36.4426422] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-06-29T16:00:36.4456425] Análise semântica concluída com sucesso!
+[2025-06-29T16:00:36.4456425] Iniciando geração de código TAC...
+[2025-06-29T16:00:36.4908973] Código TAC gerado com sucesso em: test/examples/test.tac
+[2025-06-29T16:01:49.1140365] Iniciando análise semântica...
+[2025-06-29T16:01:49.1250339] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-06-29T16:01:49.1280351] [SEMÂNTICA] Verificando expressão lógica
+[2025-06-29T16:01:49.1290379] [SEMÂNTICA] Entrando em novo escopo
+[2025-06-29T16:01:49.1290379] [SEMÂNTICA] Saindo do escopo
+[2025-06-29T16:01:49.1300447] [SEMÂNTICA] Entrando em novo escopo
+[2025-06-29T16:01:49.1300447] [SEMÂNTICA] Verificando expressão lógica
+[2025-06-29T16:01:49.1310361] [SEMÂNTICA] Entrando em novo escopo
+[2025-06-29T16:01:49.1310361] [SEMÂNTICA] Verificando expressão lógica
+[2025-06-29T16:01:49.1320419] [SEMÂNTICA] Entrando em novo escopo
+[2025-06-29T16:01:49.1320419] [SEMÂNTICA] Saindo do escopo
+[2025-06-29T16:01:49.1330386] [SEMÂNTICA] Saindo do escopo
+[2025-06-29T16:01:49.1330386] [SEMÂNTICA] Saindo do escopo
+[2025-06-29T16:01:49.1340368] Análise semântica concluída com sucesso!
+[2025-06-29T16:01:49.1340368] Iniciando geração de código TAC...
+[2025-06-29T16:01:49.1992321] Código TAC gerado com sucesso em: test/examples/triangulo_pascal.tac

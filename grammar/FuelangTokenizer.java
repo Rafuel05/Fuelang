@@ -1,6 +1,7 @@
 package grammar;
 
 import grammar.semantics.*;
+import grammar.tac.GeradorTAC;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 import java.io.*;
@@ -8,6 +9,11 @@ import java.io.*;
 public class FuelangTokenizer {
     public static void main(String[] args) {
         try {
+            if (args.length < 1) {
+                System.out.println("Uso: java grammar.FuelangTokenizer <arquivo.fuel> [-dot|-tac]");
+                System.exit(1);
+            }
+
             // Criar logger para mensagens do compilador
             CompilerLogger logger = new CompilerLogger();
             
@@ -56,8 +62,20 @@ public class FuelangTokenizer {
                     System.exit(1);
                 }
 
-                // Mostrar tokens se não for modo DOT
-                if (args.length == 1 || !args[1].equals("-dot")) {
+                // Gerar código TAC se solicitado
+                if (args.length > 1 && args[1].equals("-tac")) {
+                    logger.log("Iniciando geração de código TAC...");
+                    GeradorTAC geradorTAC = new GeradorTAC();
+                    geradorTAC.visit(tree);
+                    
+                    // Gerar arquivo .tac com o mesmo nome do arquivo fonte
+                    String arquivoTAC = args[0].replaceAll("\\.fuel$", ".tac");
+                    geradorTAC.salvarCodigoTAC(arquivoTAC);
+                    logger.log("Código TAC gerado com sucesso em: " + arquivoTAC);
+                }
+
+                // Mostrar tokens se não for modo DOT ou TAC
+                if (args.length == 1 || (!args[1].equals("-dot") && !args[1].equals("-tac"))) {
                     System.out.println("=== Árvore Sintática ===");
                     System.out.println(tree.toStringTree(parser));
                     
