@@ -210,3 +210,27 @@
 [2025-06-29T16:01:49.1340368] Análise semântica concluída com sucesso!
 [2025-06-29T16:01:49.1340368] Iniciando geração de código TAC...
 [2025-06-29T16:01:49.1992321] Código TAC gerado com sucesso em: test/examples/triangulo_pascal.tac
+[2025-07-08T13:50:37.159899976] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-07-08T13:50:37.166220247] [SEMÂNTICA] Verificando expressão lógica
+[2025-07-08T13:50:37.166429397] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:50:37.166593733] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:50:37.166732993] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:50:37.166921675] [SEMÂNTICA] Verificando expressão lógica
+[2025-07-08T13:50:37.167110206] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:50:37.167318865] [SEMÂNTICA] Verificando expressão lógica
+[2025-07-08T13:50:37.167501145] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:50:37.167692482] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:50:37.167859924] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:50:37.168028818] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:50:50.597763326] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-07-08T13:50:50.603804826] [SEMÂNTICA] Verificando expressão lógica
+[2025-07-08T13:50:50.604001243] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:50:50.604183763] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:50:50.604308495] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:50:50.604470687] [SEMÂNTICA] Verificando expressão lógica
+[2025-07-08T13:50:50.60462235] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:50:50.604842531] [SEMÂNTICA] Verificando expressão lógica
+[2025-07-08T13:50:50.605071026] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:50:50.605255069] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:50:50.605442529] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:50:50.605597908] [SEMÂNTICA] Saindo do escopo
