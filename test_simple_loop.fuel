@@ -1,8 +1,0 @@
-integer i = 1;
-while i <= 3 do {
-    put("Loop: ");
-    put(i);
-    put("\n");
-    i = i + 1;
-}
-put("Done!\n");
