@@ -9,10 +9,10 @@ declare i8* @malloc(i64)
 @.str_float = private unnamed_addr constant [4 x i8] c"%f\0A\00", align 1
 @.str_read_int = private unnamed_addr constant [3 x i8] c"%d\00", align 1
 @.str_read_float = private unnamed_addr constant [3 x i8] c"%f\00", align 1
-@.str_0 = private unnamed_addr constant [29 x i8] c"Digite o n\C3\BAmero de linhas: \00", align 1
-@.str_1 = private unnamed_addr constant [39 x i8] c"Erro: n\C3\BAmero deve ser maior que zero!\00", align 1
+@.str_0 = private unnamed_addr constant [28 x i8] c"Digite o n\FAmero de linhas: \00", align 1
+@.str_1 = private unnamed_addr constant [38 x i8] c"Erro: n\FAmero deve ser maior que zero!\00", align 1
 @.str_2 = private unnamed_addr constant [2 x i8] c"*\00", align 1
-@.str_3 = private unnamed_addr constant [3 x i8] c"\5Cn\00", align 1
+@.str_3 = private unnamed_addr constant [2 x i8] c"\0A\00", align 1
 
 define i32 @main() {
 entry:
@@ -20,7 +20,7 @@ entry:
   %linha = alloca i32, align 4
   %coluna = alloca i32, align 4
   store i32 0, i32* %n, align 4
-  %r0 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str_0, i64 0, i64 0))
+  %r0 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([28 x i8], [28 x i8]* @.str_0, i64 0, i64 0))
   %r1 = call i32 (i8*, ...) @scanf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str_read_int, i64 0, i64 0), i32* %n)
   %r2 = load i32, i32* %n, align 4
   %r4 = icmp sle i32 %r2, 0
@@ -29,12 +29,11 @@ entry:
   br i1 %r5, label %L0, label %continue0
 
 continue0:
-  %r6 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([39 x i8], [39 x i8]* @.str_1, i64 0, i64 0))
+  %r6 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([38 x i8], [38 x i8]* @.str_1, i64 0, i64 0))
   br label %L1
 
 L0:
   store i32 1, i32* %linha, align 4
-  br label %end_program
 
 L2:
   %r7 = load i32, i32* %linha, align 4
@@ -46,7 +45,6 @@ L2:
 
 continue1:
   store i32 1, i32* %coluna, align 4
-  br label %end_program
 
 L4:
   %r12 = load i32, i32* %coluna, align 4
@@ -64,14 +62,13 @@ continue2:
   br label %L4
 
 L5:
-  %r20 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str_3, i64 0, i64 0))
+  %r20 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([2 x i8], [2 x i8]* @.str_3, i64 0, i64 0))
   %r21 = load i32, i32* %linha, align 4
   %r22 = add i32 %r21, 1
   store i32 %r22, i32* %linha, align 4
   br label %L2
 
 L3:
-  br label %end_program
 
 L1:
   br label %end_program

@@ -234,3 +234,30 @@
 [2025-07-08T13:50:50.605255069] [SEMÂNTICA] Saindo do escopo
 [2025-07-08T13:50:50.605442529] [SEMÂNTICA] Saindo do escopo
 [2025-07-08T13:50:50.605597908] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:52:36.381406022] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-07-08T13:52:36.387582104] [SEMÂNTICA] Verificando expressão lógica
+[2025-07-08T13:52:36.387825086] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:52:36.388033004] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:52:36.388191289] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:52:36.388399377] [SEMÂNTICA] Verificando expressão lógica
+[2025-07-08T13:52:36.388591254] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:52:36.388823848] [SEMÂNTICA] Verificando expressão lógica
+[2025-07-08T13:52:36.389036885] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:52:36.389255723] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:52:36.389462529] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:52:36.389615774] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:53:03.929959397] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-07-08T13:53:03.935957626] [SEMÂNTICA] Verificando expressão lógica
+[2025-07-08T13:53:03.936193336] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:53:03.936420789] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:53:27.333087057] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-07-08T13:53:27.339431442] [SEMÂNTICA] Verificando expressão lógica
+[2025-07-08T13:53:27.33962931] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:53:27.339785571] [SEMÂNTICA] Verificando expressão lógica
+[2025-07-08T13:53:27.339940731] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:53:27.340099396] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:53:27.340222796] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:53:27.340376523] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:53:27.340564383] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:53:27.340728148] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:53:27.34089522] [SEMÂNTICA] Saindo do escopo

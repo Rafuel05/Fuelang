@@ -1,0 +1,12 @@
+integer x = 5;
+if x > 3 then {
+    put("x is greater than 3\n");
+    if x > 10 then {
+        put("x is also greater than 10\n");
+    } else {
+        put("x is not greater than 10\n");
+    }
+} else {
+    put("x is not greater than 3\n");
+}
+put("End of program\n");

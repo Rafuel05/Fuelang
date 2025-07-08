@@ -160,22 +160,48 @@ public class GeradorLLVM {
     private String converterParaLLVM(String conteudo) {
         StringBuilder resultado = new StringBuilder();
         
-        // Converte string para bytes UTF-8
-        byte[] bytes = conteudo.getBytes();
-        
-        for (byte b : bytes) {
-            int valor = b & 0xFF; // Converte para unsigned
+        for (int i = 0; i < conteudo.length(); i++) {
+            char c = conteudo.charAt(i);
             
-            if (valor >= 32 && valor <= 126 && valor != 34 && valor != 92) {
-                // Caracteres ASCII imprimíveis, exceto " e \
-                resultado.append((char) valor);
+            // Handle escape sequences first
+            if (c == '\\' && i + 1 < conteudo.length()) {
+                char nextChar = conteudo.charAt(i + 1);
+                switch (nextChar) {
+                    case 'n':
+                        resultado.append("\\0A"); // Newline
+                        i++; // Skip next character
+                        break;
+                    case 't':
+                        resultado.append("\\09"); // Tab
+                        i++; // Skip next character
+                        break;
+                    case 'r':
+                        resultado.append("\\0D"); // Carriage return
+                        i++; // Skip next character
+                        break;
+                    case '\\':
+                        resultado.append("\\\\"); // Backslash
+                        i++; // Skip next character
+                        break;
+                    case '"':
+                        resultado.append("\\22"); // Quote
+                        i++; // Skip next character
+                        break;
+                    default:
+                        // Not a recognized escape sequence, treat as literal
+                        resultado.append(String.format("\\%02X", (int) c));
+                        break;
+                }
+            } else if (c >= 32 && c <= 126 && c != 34 && c != 92) {
+                // Printable ASCII characters, except " and \
+                resultado.append(c);
             } else {
-                // Caracteres especiais ou não-ASCII - usar escape hexadecimal
-                resultado.append(String.format("\\%02X", valor));
+                // Special characters or non-ASCII - use hexadecimal escape
+                resultado.append(String.format("\\%02X", (int) c));
             }
         }
         
-        // Adiciona terminador nulo
+        // Add null terminator
         resultado.append("\\00");
         
         return resultado.toString();
@@ -351,32 +377,50 @@ public class GeradorLLVM {
     private void traduzirRotulo(TACInstruction instrucao, int indice, List<TACInstruction> instrucoes) {
         String label = instrucao.getArg1().getNome();
         
-        // Se a instrução anterior não foi um branch, adiciona um
+        // Only add a branch before the label if the previous instruction wasn't already a branch
+        // and we're not at the beginning of the function
         if (!ultimaInstrucao.contains("br ") && !ultimaInstrucao.isEmpty()) {
-            codigo.append("  br label %end_program\n");
-            System.out.println("Adicionando br antes do label " + label);
-        }
-        
-        codigo.append("\n").append(label).append(":\n");
-        ultimaInstrucao = ""; // Reset para novo bloco
-        
-        // Verificar se há uma próxima instrução que não é um rótulo
-        boolean temInstrucaoSeguinte = false;
-        for (int i = indice + 1; i < instrucoes.size(); i++) {
-            TACInstruction proxima = instrucoes.get(i);
-            if (proxima.getOperador() != TACInstruction.Operador.ROTULO) {
-                temInstrucaoSeguinte = true;
-                break;
+            // Check if this label is actually reachable through normal flow
+            // Only add a branch to end_program if this is truly a dead code path
+            boolean isDeadCode = isDeadCodeLabel(label, indice, instrucoes);
+            if (isDeadCode) {
+                codigo.append("  br label %end_program\n");
+                System.out.println("Adding br to end_program before unreachable label " + label);
             }
         }
         
-        // Se não tem próxima instrução ou só tem rótulos seguintes, 
-        // adiciona um branch para o final
-        if (!temInstrucaoSeguinte) {
-            System.out.println("Label " + label + " sem instrução seguinte, adicionando br para end_program");
-            codigo.append("  br label %end_program\n");
-            ultimaInstrucao = "  br label %end_program\n";
+        codigo.append("\n").append(label).append(":\n");
+        ultimaInstrucao = ""; // Reset for new block
+        
+        // Don't add any automatic branches after labels
+        // Let the natural flow continue to the next instruction
+    }
+    
+    // Helper method to determine if a label represents dead code
+    private boolean isDeadCodeLabel(String label, int indice, List<TACInstruction> instrucoes) {
+        // Check if this label is the target of any branches or conditional jumps
+        for (TACInstruction inst : instrucoes) {
+            if (inst.getOperador() == TACInstruction.Operador.DESVIAR && 
+                inst.getArg1().getNome().equals(label)) {
+                return false; // Label is used by a branch
+            }
+            if (inst.getOperador() == TACInstruction.Operador.SE_FALSO && 
+                inst.getArg2().getNome().equals(label)) {
+                return false; // Label is used by a conditional branch
+            }
         }
+        
+        // If we reach here, the label might be dead code
+        // But let's be conservative and only consider it dead if it's at the very end
+        // with no following instructions
+        for (int i = indice + 1; i < instrucoes.size(); i++) {
+            TACInstruction proxima = instrucoes.get(i);
+            if (proxima.getOperador() != TACInstruction.Operador.ROTULO) {
+                return false; // There are non-label instructions following
+            }
+        }
+        
+        return true; // Only labels follow, so this might be dead code
     }
     
     private void traduzirDesvio(TACInstruction instrucao) {
