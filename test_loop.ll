@@ -31,10 +31,9 @@ entry:
 continue0:
   %r6 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([38 x i8], [38 x i8]* @.str_1, i64 0, i64 0))
   br label %L1
-
 L0:
   store i32 1, i32* %linha, align 4
-
+  br label %L2
 L2:
   %r7 = load i32, i32* %linha, align 4
   %r8 = load i32, i32* %n, align 4
@@ -45,7 +44,7 @@ L2:
 
 continue1:
   store i32 1, i32* %coluna, align 4
-
+  br label %L4
 L4:
   %r12 = load i32, i32* %coluna, align 4
   %r13 = load i32, i32* %linha, align 4
@@ -60,16 +59,14 @@ continue2:
   %r19 = add i32 %r18, 1
   store i32 %r19, i32* %coluna, align 4
   br label %L4
-
 L5:
   %r20 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([2 x i8], [2 x i8]* @.str_3, i64 0, i64 0))
   %r21 = load i32, i32* %linha, align 4
   %r22 = add i32 %r21, 1
   store i32 %r22, i32* %linha, align 4
   br label %L2
-
 L3:
-
+  br label %L1
 L1:
   br label %end_program
 

@@ -261,3 +261,35 @@
 [2025-07-08T13:53:27.340564383] [SEMÂNTICA] Saindo do escopo
 [2025-07-08T13:53:27.340728148] [SEMÂNTICA] Entrando em novo escopo
 [2025-07-08T13:53:27.34089522] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:54:51.644721307] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-07-08T13:54:51.651314495] [SEMÂNTICA] Verificando expressão lógica
+[2025-07-08T13:54:51.651507915] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:54:51.651716564] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:55:43.984701112] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-07-08T13:55:43.990891378] [SEMÂNTICA] Verificando expressão lógica
+[2025-07-08T13:55:43.991127979] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:55:43.991353299] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:56:17.489959362] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-07-08T13:56:17.496343831] [SEMÂNTICA] Verificando expressão lógica
+[2025-07-08T13:56:17.496594418] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:56:17.496781757] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:56:17.496937757] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:56:17.497188935] [SEMÂNTICA] Verificando expressão lógica
+[2025-07-08T13:56:17.497376144] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:56:17.497601895] [SEMÂNTICA] Verificando expressão lógica
+[2025-07-08T13:56:17.497792039] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:56:17.498003493] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:56:17.498244963] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:56:17.498391617] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:57:13.787631237] [SEMÂNTICA] Iniciando análise semântica do programa
+[2025-07-08T13:57:13.795754866] [SEMÂNTICA] Verificando expressão lógica
+[2025-07-08T13:57:13.795970127] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:57:13.796201008] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:57:13.796339406] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:57:13.79649719] [SEMÂNTICA] Verificando expressão lógica
+[2025-07-08T13:57:13.796644434] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:57:13.796845589] [SEMÂNTICA] Verificando expressão lógica
+[2025-07-08T13:57:13.797086338] [SEMÂNTICA] Entrando em novo escopo
+[2025-07-08T13:57:13.797289185] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:57:13.797460865] [SEMÂNTICA] Saindo do escopo
+[2025-07-08T13:57:13.797589024] [SEMÂNTICA] Saindo do escopo

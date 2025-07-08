@@ -380,20 +380,24 @@ public class GeradorLLVM {
         // Only add a branch before the label if the previous instruction wasn't already a branch
         // and we're not at the beginning of the function
         if (!ultimaInstrucao.contains("br ") && !ultimaInstrucao.isEmpty()) {
-            // Check if this label is actually reachable through normal flow
-            // Only add a branch to end_program if this is truly a dead code path
-            boolean isDeadCode = isDeadCodeLabel(label, indice, instrucoes);
-            if (isDeadCode) {
-                codigo.append("  br label %end_program\n");
-                System.out.println("Adding br to end_program before unreachable label " + label);
-            }
+            // Always fall through to the next instruction by adding a branch to this label
+            codigo.append("  br label %").append(label).append("\n");
         }
         
-        codigo.append("\n").append(label).append(":\n");
+        codigo.append(label).append(":\n");
         ultimaInstrucao = ""; // Reset for new block
         
-        // Don't add any automatic branches after labels
-        // Let the natural flow continue to the next instruction
+        // Check if the next instruction is also a label
+        // If so, we need to add a branch to it to avoid consecutive labels
+        if (indice + 1 < instrucoes.size()) {
+            TACInstruction nextInstr = instrucoes.get(indice + 1);
+            if (nextInstr.getOperador() == TACInstruction.Operador.ROTULO) {
+                // Next instruction is also a label, add a branch to it
+                String nextLabel = nextInstr.getArg1().getNome();
+                codigo.append("  br label %").append(nextLabel).append("\n");
+                ultimaInstrucao = "  br label %" + nextLabel + "\n";
+            }
+        }
     }
     
     // Helper method to determine if a label represents dead code

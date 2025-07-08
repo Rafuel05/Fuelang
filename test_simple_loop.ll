@@ -17,7 +17,7 @@ define i32 @main() {
 entry:
   %i = alloca i32, align 4
   store i32 1, i32* %i, align 4
-
+  br label %L0
 L0:
   %r0 = load i32, i32* %i, align 4
   %r2 = icmp sle i32 %r0, 3
@@ -34,7 +34,6 @@ continue0:
   %r9 = add i32 %r8, 1
   store i32 %r9, i32* %i, align 4
   br label %L0
-
 L1:
   %r10 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([7 x i8], [7 x i8]* @.str_2, i64 0, i64 0))
   br label %end_program
