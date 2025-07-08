@@ -2,6 +2,7 @@ package grammar;
 
 import grammar.semantics.*;
 import grammar.tac.GeradorTAC;
+import grammar.llvm.GeradorLLVM;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 import java.io.*;
@@ -10,7 +11,7 @@ public class FuelangTokenizer {
     public static void main(String[] args) {
         try {
             if (args.length < 1) {
-                System.out.println("Uso: java grammar.FuelangTokenizer <arquivo.fuel> [-dot|-tac]");
+                System.out.println("Uso: java grammar.FuelangTokenizer <arquivo.fuel> [-dot|-tac|-llvm]");
                 System.exit(1);
             }
 
@@ -53,29 +54,41 @@ public class FuelangTokenizer {
 
                 // Análise semântica
                 try {
-                    logger.log("Iniciando análise semântica...");
+                    System.out.println("Iniciando análise semântica...");
                     SemanticAnalyzer semanticAnalyzer = new SemanticAnalyzer(logger);
                     semanticAnalyzer.visit(tree);
-                    logger.log("Análise semântica concluída com sucesso!");
+                    System.out.println("Análise semântica concluída com sucesso!");
                 } catch (SemanticError e) {
                     System.err.println(e.getMessage());
                     System.exit(1);
                 }
 
                 // Gerar código TAC se solicitado
-                if (args.length > 1 && args[1].equals("-tac")) {
-                    logger.log("Iniciando geração de código TAC...");
+                if (args.length > 1 && (args[1].equals("-tac") || args[1].equals("-llvm"))) {
+                    System.out.println("Iniciando geração de código TAC...");
                     GeradorTAC geradorTAC = new GeradorTAC();
                     geradorTAC.visit(tree);
                     
                     // Gerar arquivo .tac com o mesmo nome do arquivo fonte
                     String arquivoTAC = args[0].replaceAll("\\.fuel$", ".tac");
                     geradorTAC.salvarCodigoTAC(arquivoTAC);
-                    logger.log("Código TAC gerado com sucesso em: " + arquivoTAC);
+                    System.out.println("Código TAC gerado com sucesso em: " + arquivoTAC);
+                    
+                    // Gerar código LLVM se solicitado
+                    if (args[1].equals("-llvm")) {
+                        System.out.println("Iniciando geração de código LLVM IR...");
+                        GeradorLLVM geradorLLVM = new GeradorLLVM();
+                        geradorLLVM.gerarLLVM(geradorTAC.getInstrucoes());
+                        
+                        // Gerar arquivo .ll com o mesmo nome do arquivo fonte
+                        String arquivoLLVM = args[0].replaceAll("\\.fuel$", ".ll");
+                        geradorLLVM.salvarCodigoLLVM(arquivoLLVM);
+                        System.out.println("Código LLVM IR gerado com sucesso em: " + arquivoLLVM);
+                    }
                 }
 
-                // Mostrar tokens se não for modo DOT ou TAC
-                if (args.length == 1 || (!args[1].equals("-dot") && !args[1].equals("-tac"))) {
+                // Mostrar tokens se não for modo DOT, TAC ou LLVM
+                if (args.length == 1 || (!args[1].equals("-dot") && !args[1].equals("-tac") && !args[1].equals("-llvm"))) {
                     System.out.println("=== Árvore Sintática ===");
                     System.out.println(tree.toStringTree(parser));
                     
@@ -95,42 +108,44 @@ public class FuelangTokenizer {
                 
                 // Gerar arquivo DOT se solicitado
                 if (args.length > 1 && args[1].equals("-dot")) {
-                    DotGenerator dot = new DotGenerator();
-                    generateDOT(tree, parser, dot);
-                    dot.generateDotFile("ast.dot");
-                    System.out.println("Arquivo AST gerado: ast.dot");
+                    System.out.println("Gerando arquivo DOT...");
+                    DotGenerator dotGen = new DotGenerator();
+                    generateDotFromTree(tree, parser, dotGen);
+                    
+                    String dotFile = args[0].replaceAll("\\.fuel$", ".dot");
+                    dotGen.generateDotFile(dotFile);
+                    System.out.println("Arquivo DOT gerado: " + dotFile);
                 }
+
             } catch (SyntaxError e) {
                 System.err.println(e.getMessage());
                 System.exit(1);
+            } catch (LexicalError e) {
+                System.err.println(e.getMessage());
+                System.exit(1);
             }
-            
-        } catch (IOException e) {
-            System.err.println("Erro ao ler arquivo: " + e.getMessage());
-            System.exit(1);
-        } catch (LexicalError e) {
-            System.err.println(e.getMessage());
+
+        } catch (Exception e) {
+            System.err.println("Erro fatal: " + e.getMessage());
+            e.printStackTrace();
             System.exit(1);
         }
     }
-
-    private static void generateDOT(ParseTree tree, FuelangParser parser, DotGenerator dot) {
-        if (tree instanceof ParserRuleContext) {
-            ParserRuleContext ctx = (ParserRuleContext) tree;
-            String rootNode = dot.addNode(parser.getRuleNames()[ctx.getRuleIndex()]);
+    
+    private static String generateDotFromTree(ParseTree tree, Parser parser, DotGenerator dotGen) {
+        if (tree instanceof TerminalNode) {
+            return dotGen.addNode(tree.getText());
+        } else {
+            RuleContext ruleContext = (RuleContext) tree;
+            String ruleName = parser.getRuleNames()[ruleContext.getRuleIndex()];
+            String parentNode = dotGen.addNode(ruleName);
             
             for (int i = 0; i < tree.getChildCount(); i++) {
-                ParseTree child = tree.getChild(i);
-                if (child instanceof TerminalNode) {
-                    String childNode = dot.addNode(child.getText());
-                    dot.addEdge(rootNode, childNode);
-                } else if (child instanceof ParserRuleContext) {
-                    ParserRuleContext childCtx = (ParserRuleContext) child;
-                    String childNode = dot.addNode(parser.getRuleNames()[childCtx.getRuleIndex()]);
-                    dot.addEdge(rootNode, childNode);
-                    generateDOT(child, parser, dot);
-                }
+                String childNode = generateDotFromTree(tree.getChild(i), parser, dotGen);
+                dotGen.addEdge(parentNode, childNode);
             }
+            
+            return parentNode;
         }
     }
 }
